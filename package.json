@@ -2,7 +2,7 @@
   "name": "hot-wire",
   "version": "0.1.0",
   "description": "Simple DI for JavaScript, inspired by experience with cujojs/wire and Symfony Container.",
-  "main": "src/HotWire.js",
+  "main": "src/index.js",
   "directories": {
     "example": "example",
     "test": "test"
@@ -12,7 +12,7 @@
     "_coverage": "rm -rf ./nyc_output && ./node_modules/nyc/bin/nyc.js --reporter lcov mocha --recursive",
     "coverage": "npm run-script _coverage && ( nohup xdg-open './coverage/lcov-report/index.html' > /dev/null || nyc report)",
     "coverage-text": "npm run-script _coverage && ./node_modules/istanbul/lib/cli.js report text",
-    "test": "./node_modules/jshint/bin/jshint src test  && ./node_modules/jscs/bin/jscs src test && ./node_modules/mocha/bin/mocha --recursive",
+    "test": "./node_modules/jshint/bin/jshint src test  && ./node_modules/jscs/bin/jscs src test && ./node_modules/mocha/bin/mocha --recursive --compilers js:@babel/register",
     "coveralls": "npm run-script _coverage && nyc report --reporter=text-lcov | coveralls",
     "build": "babel src --out-dir lib",
     "prepublish": "npm run build"
@@ -24,6 +24,7 @@
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "coveralls": "^2.13.1",

@@ -1,10 +1,14 @@
 /* jshint mocha: true */
 "use strict";
 
-var chai = require("chai");
-chai.use(require("dirty-chai"));
+import chai from "chai";
+import dirtyChai from "dirty-chai";
+
+import HotWire from "../../src/HotWire";
+
+chai.use(dirtyChai);
+
 var expect = chai.expect;
-var HotWire = require("../../src/HotWire.js");
 
 describe("hotwire/HotWire", function() {
 	describe("~_addCalls", function(){

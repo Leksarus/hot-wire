@@ -1,8 +1,8 @@
 "use strict";
 
-var when = require("when");
-var whenKeys = require("when/keys");
-var _ = require("lodash");
+import when from "when";
+import whenKeys from "when/keys";
+import _ from "lodash";
 
 class Resolver {
 	constructor(containerConfig) {
@@ -107,4 +107,4 @@ class Resolver {
 	}
 }
 
-module.exports = Resolver;
+export default Resolver;

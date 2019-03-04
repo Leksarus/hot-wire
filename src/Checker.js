@@ -10,4 +10,4 @@ class Checker {
 	}
 }
 
-module.export = Checker;
+export default Checker;

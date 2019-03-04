@@ -1,7 +1,7 @@
 "use strict";
 
-var Resolver = require("./Resolver");
-var _ = require("lodash");
+import Resolver from "./Resolver";
+import _ from "lodash";
 
 class HotWire {
 	constructor() {
@@ -35,4 +35,4 @@ class HotWire {
 	}
 }
 
-module.exports = HotWire;
+export default HotWire;

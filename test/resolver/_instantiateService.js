@@ -1,10 +1,14 @@
 /* jshint mocha: true */
 "use strict";
 
-var chai = require("chai");
-chai.use(require("dirty-chai"));
+import chai from "chai";
+import dirtyChai from "dirty-chai";
+
+import Resolver from "../../src/Resolver";
+
+chai.use(dirtyChai);
+
 var expect = chai.expect;
-var Resolver = require("../../src/Resolver.js");
 
 describe("hotwire/Resolver", function() {
 	describe("~_instantiateService", function(){
