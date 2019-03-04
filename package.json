@@ -1,11 +1,11 @@
 {
   "name": "hot-wire",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Simple DI for JavaScript, inspired by experience with cujojs/wire and Symfony Container.",
   "main": "src/HotWire.js",
   "directories": {
     "example": "example",
-	"test": "test"
+    "test": "test"
   },
   "scripts": {
     "postinstall": "( [ -d .git ] && for i in tools/git-hooks/*; do cp -n \"tools/git-hooks/$(basename \"$i\")\" \".git/hooks/$(basename \"$i\")\"; done) || exit 0",
@@ -13,11 +13,17 @@
     "coverage": "npm run-script _coverage && ( nohup xdg-open './coverage/lcov-report/index.html' > /dev/null || nyc report)",
     "coverage-text": "npm run-script _coverage && ./node_modules/istanbul/lib/cli.js report text",
     "test": "./node_modules/jshint/bin/jshint src test  && ./node_modules/jscs/bin/jscs src test && ./node_modules/mocha/bin/mocha --recursive",
-    "coveralls": "npm run-script _coverage && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "npm run-script _coverage && nyc report --reporter=text-lcov | coveralls",
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build"
   },
   "author": "Krzysztof Chrapka",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "coveralls": "^2.13.1",
